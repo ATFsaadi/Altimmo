@@ -1,0 +1,452 @@
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #f8f8f8;
+    color: #333;
+    padding-top: 70px; /* Ajustez cette valeur en fonction de la hauteur de votre navbar */
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+p, a, span {
+    font-family: 'Lora', serif;
+}
+
+.nav-link {
+    font-family: 'Libre Baskerville', serif;
+}
+
+
+
+
+
+.custom-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Assure que la navbar est au-dessus des autres éléments */
+    background-color: #fff; /* Fond blanc */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    padding: 15px 30px;
+ 
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+
+/* ======= Barre de navigation ======= */
+
+.custom-navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Fond assombri lors du scroll */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+    max-height: 50px;
+}
+
+.navbar-toggler {
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: #c0a16b;
+}
+
+/* Liens de navigation */
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+.nav-link {
+    color: #c0a16b !important;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    color: #f4d47c !important;
+}
+
+.nav-link i {
+    font-size: 1.1rem;
+    width: 20px;
+}
+
+/* Bouton de connexion */
+.login-btn {
+    border: 2px solid #c0a16b;
+    color: #c0a16b;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #c0a16b;
+    color: #fff;
+}
+
+/* ======= Bouton de recherche amélioré ======= */
+.search-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-btn-container .btn-primary {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.search-btn-container .btn-primary:hover {
+    background-color:  #f4d47c;
+    transform: scale(1.05);
+}
+
+/* ======= Style pour le bouton Recherche avancée ======= */
+.advanced-search-toggle {
+    background-color: #c0a16b;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.advanced-search-toggle:hover {
+    background-color: #f4d47c;
+}
+
+/* ======= Animation fluide lors de l'affichage de la recherche avancée ======= */
+#advancedSearch {
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+#advancedSearch.show {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* ======= Déplacement du bouton "Rechercher" sous les filtres quand recherche avancée activée ======= */
+.search-btn-container.mt-3 {
+    margin-top: 20px;
+}
+
+/* ======= Animation pour le bouton "Rechercher" ======= */
+.search-btn-container button {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.search-btn-container button:hover {
+    background-color: #f4d47c;
+    color: #333;
+}
+
+/* ======= Responsive ======= */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: white;
+        padding: 20px;
+        margin-top: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+
+    .navbar-nav {
+        margin-bottom: 1rem;
+    }
+
+    .nav-item {
+        margin: 8px 0;
+    }
+
+    .login-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-nav {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}
+
+/* ======= Boutons ======= */
+.btn-primary {
+    background-color: #c0a16b;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #f4d47c;
+}
+
+/* ======= Cartes d'annonces ======= */
+@media (max-width: 767.98px) {
+
+.card {
+    border-radius: 0.5rem !important;
+    border: none;
+    background-color: #ffffff;
+    color: #333;
+    box-shadow: 0px 4px 15px rgba(192, 161, 107, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card-body {
+    padding: 1.5rem !important;
+}
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(244, 212, 124, 0.3);
+}
+
+/* ======= Carrousel d'images ======= */
+.carousel-inner img {
+    height: 400px; /* Ajustez cette valeur selon vos besoins */
+    object-fit: cover;
+    border-radius: 15px;
+}
+/* ======= Pied de page ======= */
+.footer {
+    background-color: #fff;
+    color: #c0a16b;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer a {
+    color: #c0a16b !important;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer a:hover {
+    color: #f4d47c !important;
+}
+
+
+/* Style pour le lien de recherche avancée */
+/* Supprime l'ancien style .advanced-search-toggle */
+.advanced-search-link {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.advanced-search-link span {
+    color: #c0a16b;
+    transition: all 0.3s ease;
+}
+
+.advanced-search-link:hover span {
+    color: #f4d47c !important;
+    text-decoration: underline !important;
+}
+
+.advanced-search-link i {
+    font-size: 0.7rem;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.advanced-search-link[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+    .advanced-search-link {
+        font-size: 0.8rem;
+    }
+    
+    .advanced-search-link i {
+        font-size: 0.6rem;
+    }
+}
+
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    background-color: #ffffff;
+    color: #333;
+    box-shadow: 0px 4px 15px rgba(192, 161, 107, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-img-top {
+    height: 200px; /* Ajuste la hauteur des images pour les uniformiser */
+    object-fit: cover; /* Assure que l'image couvre toute la zone sans déformation */
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row > .col-md-4 {
+    display: flex;
+}
+
+/* ======= Style raffiné et moderne pour les inputs ======= */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="search"],
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #c0a16b; /* Bordure dorée subtile */
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Playfair Display', serif;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+/* Effet au focus (quand l'utilisateur clique sur l'input) */
+input:focus,
+textarea:focus {
+    border-color: #f4d47c;
+    box-shadow: 0 0 8px rgba(192, 161, 107, 0.4);
+    background-color: #fdf9f3;
+}
+
+/* Placeholder (texte à l'intérieur avant la saisie) */
+input::placeholder,
+textarea::placeholder {
+    color: #c0a16b;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Style pour les boutons de soumission */
+input[type="submit"],
+button {
+    background-color: #c0a16b;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #f4d47c;
+    color: #333;
+    transform: scale(1.05);
+}
+
+/* ======= Responsive: Ajustement pour petits écrans ======= */
+@media (max-width: 768px) {
+    input, textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+input, textarea, select {
+    font-family: 'Cormorant Garamond', serif !important;
+    border: 2px solid #c0a16b !important;
+    border-radius: 8px !important;
+    background-color: #fff !important;
+    color: #333 !important;
+    padding: 12px 15px !important;
+    font-size: 16px !important;
+}
+
+ /* Styles pour réduire et arrondir les champs */
+    .input-sm {
+        height: 35px; 
+        font-size: 14px; 
+        border-radius: 20px;
+    }
+
+    /* Centrage des étiquettes */
+    .form-label {
+        font-size: 14px;
+        font-weight: bold;
+        display: block;
+        text-align: center;
+    }
+
+    /* Centrage des champs */
+    .text-center .form-control,
+    .text-center .form-select {
+        text-align: center;
+    }
+
+    /* Amélioration de l'alignement des champs */
+    .row .col-md-3,
+    .row .col-md-4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact.card-header {
+        background-color: #c0a16b !important;
+        border-color: #b08f5a !important;
+        color: white !important; /* Pour garder un bon contraste */
+    }
+    .card {
+        max-width: 500px; /* Réduit la largeur */
+        height: auto; /* Ajuste la hauteur selon le contenu */
+        padding: 20px; /* Réduit l’espace intérieur */
+        margin: auto; /* Centre la carte */
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+    
+    @media (max-width: 767.98px) {
+        .card {
+            max-width: 90%; /* Ajuste la taille sur mobile */
+            padding: 15px;
+        }
+    }
+    
